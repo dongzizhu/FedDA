@@ -446,7 +446,7 @@ def client(args, server_state, loss_func, do_id=1):
                     valid_neg_head = np.array([])
                     valid_neg_tail = np.array([])
                     valid_r_id = np.array([])
-                    for test_edge_type in dl.links['data'].keys():
+                    for test_edge_type in dl.links_test['data'].keys():
                         valid_neg = dl.get_valid_neg(edge_types=[test_edge_type])[test_edge_type]
                         idx = random.sample(range(len(valid_pos[test_edge_type][0])), int(len(valid_pos[test_edge_type][0])/10))
                         valid_pos_head = np.concatenate([valid_pos_head, np.array(valid_pos[test_edge_type][0])[idx]])
